@@ -28,7 +28,7 @@ Version Changes:
 - Added Notes function for CounterView
 - Can now add notes for each location
 - Updated DataView to show data by location to keep it concise
-- Added dummy voice recording and image input for each location .. to be added
+- Added dummy voice recording and image input for each location .. TBA
 
 1.2.2
 - Locations and Donation Page Overhaul
@@ -40,10 +40,10 @@ Version Changes:
 
 1.2.1 
 - Updated Counter Function and UI
-- Save and retrieve counter data in a Realm database.
-- Display saved counts in a new view.
-- Reset counts function.
--Counter now supports negative numbers. 
+- Save and retrieve counter data in a Realm database
+- Display saved counts in a new view
+- Reset counts function
+-Counter now supports negative numbers
 
 1.2
 - Adds the ability to zero on the counter when changing locations
