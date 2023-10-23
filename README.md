@@ -44,6 +44,7 @@ Version Changes:
 - Display saved counts in a new view.
 - Reset counts function.
 -Counter now supports negative numbers. 
+
 1.2
 - Adds the ability to zero on the counter when changing locations
 - Can now submit data and view locally using Realm
