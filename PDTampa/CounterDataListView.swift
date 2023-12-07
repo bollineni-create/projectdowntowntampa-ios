@@ -24,7 +24,7 @@ struct CounterDataListView: View {
                     ForEach(Set(counterData.map { $0.location } + savedNotes.map { $0.location }).sorted(), id: \.self) { location in
                         Section(header: Text(location)) {
                             
-                            // Loop for counterData count values
+                            // Fetching counts recorded in the Counter
                             ForEach(counterData.filter { $0.location == location }, id: \.self) { countData in
                                 HStack {
                                     EditableText(label: "Count", data: "\(countData.count)") { newText in
@@ -38,7 +38,7 @@ struct CounterDataListView: View {
                                 }
                             }
                             
-                            // Separate ForEach loop for the images
+                            // Fetching images recorded in the Counter
                             ForEach(counterData.filter { $0.location == location && $0.imageData != nil }, id: \.self) { countData in
                                 if let imageData = countData.imageData, let uiImage = UIImage(data: imageData) {
                                     HStack {
@@ -53,7 +53,7 @@ struct CounterDataListView: View {
                             }
 
 
-                            
+                            // Fetching notes recorded in the Counter
                             ForEach(savedNotes.filter { $0.location == location }, id: \.self) { note in
                                 EditableText(label: "Note", data: note.text) { newText in
                                     let realm = try! Realm()
@@ -62,7 +62,7 @@ struct CounterDataListView: View {
                                     }
                                 }
                             }
-                            
+                            // Fetching requests recorded in the Counter
                             ForEach(friendRequests.filter { $0.location == location }, id: \.self) { request in
                                 EditableText(label: "Request from \(request.name) for", data: request.item) { newText in
                                     let realm = try! Realm()
