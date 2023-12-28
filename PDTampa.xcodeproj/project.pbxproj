@@ -15,10 +15,7 @@
 		92AE254C2B212716006F9DAE /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE254B2B212716006F9DAE /* DonationView.swift */; };
 		92AE254E2B21277A006F9DAE /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE254D2B21277A006F9DAE /* CounterView.swift */; };
 		92AE25502B212D5B006F9DAE /* InputOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE254F2B212D5B006F9DAE /* InputOptionsView.swift */; };
-		92AE25522B212D68006F9DAE /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25512B212D68006F9DAE /* AddNoteView.swift */; };
-		92AE25542B212D75006F9DAE /* AddFriendRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25532B212D75006F9DAE /* AddFriendRequestView.swift */; };
 		92AE25562B212D82006F9DAE /* CounterDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25552B212D82006F9DAE /* CounterDataListView.swift */; };
-		92AE25582B212E78006F9DAE /* AddPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25572B212E78006F9DAE /* AddPictureView.swift */; };
 		92AE255A2B212F70006F9DAE /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25592B212F70006F9DAE /* Color+Extensions.swift */; };
 		92AE255C2B212FBD006F9DAE /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE255B2B212FBD006F9DAE /* RealmManager.swift */; };
 		92DE784F2AE7EAF0004E08E7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 92DE784E2AE7EAF0004E08E7 /* Realm */; };
@@ -58,10 +55,7 @@
 		92AE254B2B212716006F9DAE /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		92AE254D2B21277A006F9DAE /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		92AE254F2B212D5B006F9DAE /* InputOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOptionsView.swift; sourceTree = "<group>"; };
-		92AE25512B212D68006F9DAE /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
-		92AE25532B212D75006F9DAE /* AddFriendRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendRequestView.swift; sourceTree = "<group>"; };
 		92AE25552B212D82006F9DAE /* CounterDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterDataListView.swift; sourceTree = "<group>"; };
-		92AE25572B212E78006F9DAE /* AddPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPictureView.swift; sourceTree = "<group>"; };
 		92AE25592B212F70006F9DAE /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		92AE255B2B212FBD006F9DAE /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		92DE78522AE7FF20004E08E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -148,9 +142,6 @@
 				92AE254B2B212716006F9DAE /* DonationView.swift */,
 				92AE254D2B21277A006F9DAE /* CounterView.swift */,
 				92AE254F2B212D5B006F9DAE /* InputOptionsView.swift */,
-				92AE25512B212D68006F9DAE /* AddNoteView.swift */,
-				92AE25532B212D75006F9DAE /* AddFriendRequestView.swift */,
-				92AE25572B212E78006F9DAE /* AddPictureView.swift */,
 				92AE25552B212D82006F9DAE /* CounterDataListView.swift */,
 				92FB8BAB2ABD067600222001 /* Assets.xcassets */,
 				92FB8BAD2ABD067600222001 /* Preview Content */,
@@ -325,7 +316,6 @@
 				92AE25562B212D82006F9DAE /* CounterDataListView.swift in Sources */,
 				92AE25502B212D5B006F9DAE /* InputOptionsView.swift in Sources */,
 				92AE25462B2126B6006F9DAE /* SettingsView.swift in Sources */,
-				92AE25542B212D75006F9DAE /* AddFriendRequestView.swift in Sources */,
 				92FB8BAA2ABD067600222001 /* ContentView.swift in Sources */,
 				92AE255A2B212F70006F9DAE /* Color+Extensions.swift in Sources */,
 				92FB8BA82ABD067600222001 /* PDTampaApp.swift in Sources */,
@@ -335,9 +325,7 @@
 				92AE25442B2126AF006F9DAE /* WelcomeView.swift in Sources */,
 				92AE25482B2126C2006F9DAE /* ContactInfoView.swift in Sources */,
 				92AE254A2B2126D0006F9DAE /* LocationsView.swift in Sources */,
-				92AE25582B212E78006F9DAE /* AddPictureView.swift in Sources */,
 				92AE254E2B21277A006F9DAE /* CounterView.swift in Sources */,
-				92AE25522B212D68006F9DAE /* AddNoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

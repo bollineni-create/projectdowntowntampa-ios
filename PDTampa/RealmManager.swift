@@ -30,3 +30,4 @@ class FriendRequest: Object {
     @Persisted var item: String = ""
     @Persisted var location: String = ""
 }
+
