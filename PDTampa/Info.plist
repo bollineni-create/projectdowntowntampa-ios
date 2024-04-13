@@ -4,6 +4,10 @@
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Used for data collection in counter</string>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<string>Accessing disk space to add pictures</string>
+	<key>NSPrivacyAccessedAPICategoryFileTimestamp</key>
+	<string>Accessing file timestamps for accurate information</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Used for data collection in counter</string>
 </dict>
