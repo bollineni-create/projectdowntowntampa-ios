@@ -13,6 +13,7 @@ import RealmSwift
 let menuIcons: [String: String] = [
     "Locations": "map.fill",
     "Donation": "gift.fill",
+    "Resources": "folder.fill",
     "Counter": "number.circle.fill",
     "Settings": "gearshape.fill",
     "Contact Info": "person.circle.fill"

@@ -32,14 +32,17 @@ struct SidebarView: View {
                 NavigationLink(destination: DonationView()) {
                     menuItem(title: "Donation", icon: "gift.fill", color: palette[4])
                 }
-                NavigationLink(destination: CounterView()) {
-                    menuItem(title: "Counter", icon: "number.circle.fill", color: palette[5])
+                NavigationLink(destination: ResourceView()) {
+                    menuItem(title: "Resources", icon: "folder.fill", color: palette[5])
                 }
-                NavigationLink(destination: SettingsView()) {
-                    menuItem(title: "Settings", icon: "gearshape.fill", color: palette[1])
+                NavigationLink(destination: CounterView()) {
+                    menuItem(title: "Counter", icon: "number.circle.fill", color: palette[4])
                 }
                 NavigationLink(destination: ContactInfoView()) {
                               menuItem(title: "Contact Info", icon: "person.circle.fill", color: palette[5])
+                }
+                NavigationLink(destination: SettingsView()) {
+                    menuItem(title: "Settings", icon: "gearshape.fill", color: palette[1])
                           }
                       }
                       .padding(.top)

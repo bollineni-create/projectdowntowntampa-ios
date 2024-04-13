@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		925F99E12BCB241D00A5602C /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F99E02BCB241D00A5602C /* ResourceView.swift */; };
 		92AE25422B2126A6006F9DAE /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25412B2126A6006F9DAE /* SidebarView.swift */; };
 		92AE25442B2126AF006F9DAE /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25432B2126AF006F9DAE /* WelcomeView.swift */; };
 		92AE25462B2126B6006F9DAE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25452B2126B6006F9DAE /* SettingsView.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		925F99E02BCB241D00A5602C /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		92AE25412B2126A6006F9DAE /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		92AE25432B2126AF006F9DAE /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		92AE25452B2126B6006F9DAE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -131,11 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				92DE78522AE7FF20004E08E7 /* Info.plist */,
-				92FB8BA72ABD067600222001 /* PDTampaApp.swift */,
 				92AE255B2B212FBD006F9DAE /* RealmManager.swift */,
+				92FB8BA72ABD067600222001 /* PDTampaApp.swift */,
 				92AE25432B2126AF006F9DAE /* WelcomeView.swift */,
 				92FB8BA92ABD067600222001 /* ContentView.swift */,
 				92AE25412B2126A6006F9DAE /* SidebarView.swift */,
+				925F99E02BCB241D00A5602C /* ResourceView.swift */,
 				92AE25452B2126B6006F9DAE /* SettingsView.swift */,
 				92AE25472B2126C2006F9DAE /* ContactInfoView.swift */,
 				92AE25492B2126D0006F9DAE /* LocationsView.swift */,
@@ -323,6 +326,7 @@
 				92AE254C2B212716006F9DAE /* DonationView.swift in Sources */,
 				92AE255C2B212FBD006F9DAE /* RealmManager.swift in Sources */,
 				92AE25442B2126AF006F9DAE /* WelcomeView.swift in Sources */,
+				925F99E12BCB241D00A5602C /* ResourceView.swift in Sources */,
 				92AE25482B2126C2006F9DAE /* ContactInfoView.swift in Sources */,
 				92AE254A2B2126D0006F9DAE /* LocationsView.swift in Sources */,
 				92AE254E2B21277A006F9DAE /* CounterView.swift in Sources */,
