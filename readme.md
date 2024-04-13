@@ -2,7 +2,10 @@
 An iOS app for volunteers and board members of Project Downtown Tampa
 
 Version Changes:
-
+1.3.6
+- Created a Resources page to aggregate websites and locations
+- Added a new page to the sidebar
+- 
 1.3.5
 - Complete Code Refactor to individual Swift files and clean up of Content View
 - Added notes for documentation of each view 
