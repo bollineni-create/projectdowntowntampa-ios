@@ -267,6 +267,7 @@ struct AddFriendRequestView: View {
             
             try realm.write {
                 realm.add(newRequest)
+                print("Request saved successfully with location: \(selectedLocation)")
             }
         } catch let error as NSError {
             print("Failed to save request: \(error.localizedDescription)")

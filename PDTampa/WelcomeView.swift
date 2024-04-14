@@ -80,8 +80,8 @@ struct WelcomeView: View {
             Text("Welcome to Project Downtown Tampa")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding(.top, 50)
-                .foregroundColor(.white)
+                .padding(.top, 50) 
+                .foregroundColor(.blue)
             
             Spacer()
             

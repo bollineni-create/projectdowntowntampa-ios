@@ -58,6 +58,11 @@ let resourceLocations = [
     ResourceLocation(name: "Metropolitan Ministries Brigade", website: nil, address: "Certification required for DMV services", details: "Identity verification assistance."),
     ResourceLocation(name: "Hyde Park United Methodist", website: nil, address: "Feed on Sundays", details: "Sunday meals for the community."),
     ResourceLocation(name: "Portico Cafe", website: nil, address: "Sunday breakfast", details: "Breakfast service on Sundays."),
-    ResourceLocation(name: "St Andrews", website: nil, address: "Daily feed", details: "Daily meal services.")
+    ResourceLocation(name: "St Andrews", website: nil, address: "Daily feed", details: "Daily meal services."),
+    ResourceLocation(name: "Trinity Cafe 1", website: URL(string: "https://feedingtampabay.org"), address: "2801 N. Nebraska Ave. Tampa, FL 33602", details: "Hot meals served Mon-Fri 11:30 am - 12:30 pm, Sat-Sun 9:00 am - 10:00 am; Frozen To-Go Meals available Mon-Fri 11:30 am - 12:30 pm & Sat-Sun 9:00 am - 10:00 am. Contact: (813) 865-4822"),
+    ResourceLocation(name: "Trinity Cafe 2", website: URL(string: "https://feedingtampabay.org"), address: "2202 E. Busch Blvd. Tampa, FL 33612", details: "Hot meals served Mon-Fri 11:30 am - 12:30 pm, Sat 9:00 am - 10:00 am; Frozen To-Go Meals available Mon-Fri 11:30 am - 12:30 pm & Sat 9:00 am - 10:00 am; Mobile Pantry 1st Saturday of the month 9:30 am - 11:00 am. Temporarily located at 8715 N 22nd St, Tampa, FL 33604 (school bus ramp off Yukon). Contact: (813) 865-4822"),
+    ResourceLocation(name: "Trinity Cafe 3", website: URL(string: "https://feedingtampabay.org"), address: "6330 54th Ave N, St. Petersburg, FL 33709", details: "Hot Meals served Mon-Fri 5:30 pm - 6:30 pm; Feeding Minds Food Pantry; Benefits Assistance Program; Nutrition Education; FRESHforce - Workforce development program; Healthy Vending Machines; Showers; Laundry; Clothing Closet; Rotating services include Diapers & Baby Supplies, Rental & Utility Emergency Assistance, Adult Education Courses, Financial Literacy Courses, Citizenship Resources, Housing Resources, Legal Services, VITA Assistance, Medical Services, HIV Testing. Contact: (813) 710-6269"),
+
+    
 ]
 

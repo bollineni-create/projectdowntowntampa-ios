@@ -34,6 +34,7 @@ struct LocationsView: View {
             Location(name: "Gaslight Park", address: "241 E Madison St, Tampa, FL 33602", coordinate: CLLocationCoordinate2D(latitude: 27.947951, longitude: -82.458507)),
             Location(name: "Good Sam", address: "3302 N Florida Ave, Tampa, FL 33603", coordinate: CLLocationCoordinate2D(latitude: 27.974912, longitude: -82.459724)),
             Location(name: "Graveyard", address: "1301 N Morgan St, Tampa, FL 33602", coordinate: CLLocationCoordinate2D(latitude: 27.955935, longitude: -82.457871)),
+            Location(name: "Publix on Bayshore", address: "243 Bayshore Blvd, Tampa, FL 33606", coordinate: CLLocationCoordinate2D(latitude: 27.942331, longitude: -82.459955)),
             Location(name: "Bridge", address: "320 Bayshore Blvd, Tampa, FL 33606", coordinate: CLLocationCoordinate2D(latitude: 27.940439, longitude: -82.459692))
         ]
         

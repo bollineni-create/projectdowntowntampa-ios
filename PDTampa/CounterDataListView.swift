@@ -23,27 +23,18 @@ struct CounterDataListView: View {
                 List {
                     ForEach(Set(counterData.map { $0.location } + savedNotes.map { $0.location }).sorted(), id: \.self) { location in
                         Section(header: Text(location)) {
-                            
                             // Fetching counts recorded in the Counter
                             ForEach(counterData.filter { $0.location == location }, id: \.self) { countData in
-                                HStack {
-                                    EditableText(label: "Count", data: "\(countData.count)") { newText in
-                                        if let newCount = Int(newText) {
-                                            let realm = try! Realm()
-                                            try! realm.write {
-                                                countData.count = newCount
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            
-                            // Fetching images recorded in the Counter
-                            ForEach(counterData.filter { $0.location == location && $0.imageData != nil }, id: \.self) { countData in
-                                if let imageData = countData.imageData, let uiImage = UIImage(data: imageData) {
+                                VStack(alignment: .leading) {
                                     HStack {
-                                        EditableText(label: "Image", data: "") { _ in
-                                        }
+                                        Text("Count: \(countData.count)")
+                                        Spacer()
+                                        Text("Date: \(countData.dateEntered.formatted(date: .abbreviated, time: .shortened))")
+                                            .font(.footnote)
+                                            .foregroundColor(.gray)
+                                    }
+                                    // Optionally include an image if present
+                                    if let imageData = countData.imageData, let uiImage = UIImage(data: imageData) {
                                         Image(uiImage: uiImage)
                                             .resizable()
                                             .scaledToFit()
@@ -51,8 +42,7 @@ struct CounterDataListView: View {
                                     }
                                 }
                             }
-
-
+                            
                             // Fetching notes recorded in the Counter
                             ForEach(savedNotes.filter { $0.location == location }, id: \.self) { note in
                                 EditableText(label: "Note", data: note.text) { newText in
@@ -62,6 +52,7 @@ struct CounterDataListView: View {
                                     }
                                 }
                             }
+
                             // Fetching requests recorded in the Counter
                             ForEach(friendRequests.filter { $0.location == location }, id: \.self) { request in
                                 EditableText(label: "Request from \(request.name) for", data: request.item) { newText in
