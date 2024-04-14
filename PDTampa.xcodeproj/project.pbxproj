@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		925F99E12BCB241D00A5602C /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F99E02BCB241D00A5602C /* ResourceView.swift */; };
+		9295ECBA2BCBEBE3008793B2 /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = 9295ECB92BCBEBE3008793B2 /* Appwrite */; };
 		92AE25422B2126A6006F9DAE /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25412B2126A6006F9DAE /* SidebarView.swift */; };
 		92AE25442B2126AF006F9DAE /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25432B2126AF006F9DAE /* WelcomeView.swift */; };
 		92AE25462B2126B6006F9DAE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE25452B2126B6006F9DAE /* SettingsView.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		925F99E02BCB241D00A5602C /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
+		9295ECBB2BCBEF72008793B2 /* PDTampa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PDTampa.entitlements; sourceTree = "<group>"; };
 		92AE25412B2126A6006F9DAE /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		92AE25432B2126AF006F9DAE /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		92AE25452B2126B6006F9DAE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			files = (
 				92DE78512AE7EAF0004E08E7 /* RealmSwift in Frameworks */,
 				92DE784F2AE7EAF0004E08E7 /* Realm in Frameworks */,
+				9295ECBA2BCBEBE3008793B2 /* Appwrite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +135,7 @@
 		92FB8BA62ABD067600222001 /* PDTampa */ = {
 			isa = PBXGroup;
 			children = (
+				9295ECBB2BCBEF72008793B2 /* PDTampa.entitlements */,
 				92DE78522AE7FF20004E08E7 /* Info.plist */,
 				92AE255B2B212FBD006F9DAE /* RealmManager.swift */,
 				92FB8BA72ABD067600222001 /* PDTampaApp.swift */,
@@ -196,6 +200,7 @@
 			packageProductDependencies = (
 				92DE784E2AE7EAF0004E08E7 /* Realm */,
 				92DE78502AE7EAF0004E08E7 /* RealmSwift */,
+				9295ECB92BCBEBE3008793B2 /* Appwrite */,
 			);
 			productName = PDTampa;
 			productReference = 92FB8BA42ABD067600222001 /* PDTampa.app */;
@@ -273,6 +278,7 @@
 			mainGroup = 92FB8B9B2ABD067600222001;
 			packageReferences = (
 				92DE784D2AE7EAF0004E08E7 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				9295ECB82BCBEBE3008793B2 /* XCRemoteSwiftPackageReference "sdk-for-apple" */,
 			);
 			productRefGroup = 92FB8BA52ABD067600222001 /* Products */;
 			projectDirPath = "";
@@ -490,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PDTampa/PDTampa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_ASSET_PATHS = "\"PDTampa/Preview Content\"";
@@ -523,6 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PDTampa/PDTampa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_ASSET_PATHS = "\"PDTampa/Preview Content\"";
@@ -669,6 +677,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9295ECB82BCBEBE3008793B2 /* XCRemoteSwiftPackageReference "sdk-for-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appwrite/sdk-for-apple";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		92DE784D2AE7EAF0004E08E7 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -680,6 +696,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9295ECB92BCBEBE3008793B2 /* Appwrite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9295ECB82BCBEBE3008793B2 /* XCRemoteSwiftPackageReference "sdk-for-apple" */;
+			productName = Appwrite;
+		};
 		92DE784E2AE7EAF0004E08E7 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 92DE784D2AE7EAF0004E08E7 /* XCRemoteSwiftPackageReference "realm-swift" */;

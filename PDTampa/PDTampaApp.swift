@@ -6,6 +6,13 @@
 //
 
 import SwiftUI
+import Appwrite
+import AuthenticationServices
+
+let client = Client()
+    .setEndpoint("https://cloud.appwrite.io/v1")
+    .setProject("661bb2a0379cd27a4306")
+    .setSelfSigned(true) // For self signed certificates, only use for development
 
 @main
 struct PDTampaApp: App {
@@ -13,7 +20,7 @@ struct PDTampaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
                 .preferredColorScheme(isDarkMode ? .dark : .light) // New line
         }
     }
