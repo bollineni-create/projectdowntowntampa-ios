@@ -3,6 +3,11 @@ An iOS app for volunteers and board members of Project Downtown Tampa
 
 Version Changes:
 
+1.3.7
+- Modified WelcomeView
+- Now reroutes to ContentView with the SidebarView
+- Added Appwrite API as a backend solution
+
 1.3.6
 - Created a Resources page to aggregate websites and locations
 - Added a new page to the sidebar
