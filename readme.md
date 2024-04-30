@@ -3,6 +3,13 @@ An iOS app for volunteers and board members of Project Downtown Tampa
 
 Version Changes:
 
+1.3.8
+- Added the ability to count by tapping the screen
+- Created a new data point of date and time to accurately record information and accordingly for the Realm Manager
+- Amended new locations for our volunteers
+- Implemented a Sign in with Apple in the welcome screen and a title to start it off
+- Added multiple resources and information to share with our friends downtown
+
 1.3.7
 - Modified WelcomeView
 - Now reroutes to ContentView with the SidebarView
