@@ -3,6 +3,11 @@ An iOS app for volunteers and board members of Project Downtown Tampa
 
 Version Changes:
 
+2.0
+- Database set up to store Counter data in the cloud
+- Using JSON file to send HTTP requests
+- Implementing to all parts of the data collection
+
 1.3.8
 - Added the ability to count by tapping the screen
 - Created a new data point of date and time to accurately record information and accordingly for the Realm Manager
