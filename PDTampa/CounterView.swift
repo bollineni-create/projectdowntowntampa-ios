@@ -13,6 +13,15 @@ import RealmSwift
 
 // CounterView
 
+// Define the data model for the network request
+struct NetworkCounterData: Codable {
+    var Date: String
+    var Location: String
+    var Number_of_People: Int
+    var Comments: String
+}
+
+// CounterView definition
 struct CounterView: View {
     @State private var itemsCounted: Int = 0
     @State private var selectedLocation: String = "Borell Park"
@@ -20,7 +29,7 @@ struct CounterView: View {
     @State private var navigateToDataList = false
     let locations = ["Borell Park", "Bus Stop 1", "Bus Stop 2", "Bus Stop 3", "Gaslight Park", "Good Sam", "Graveyard"]
     var realm: Realm?
-    
+
     init() {
         realm = RealmManager.setupRealm()
     }
@@ -82,6 +91,7 @@ struct CounterView: View {
         })
     }
 
+    // Local and network data handling
     private func saveData() {
         guard let realm = realm else {
             print("Realm is not initialized.")
@@ -89,18 +99,65 @@ struct CounterView: View {
         }
         do {
             try realm.write {
+                let newData: CounterData
                 if let existingData = realm.objects(CounterData.self).filter("location == %@", selectedLocation).first {
                     existingData.count += itemsCounted
+                    newData = existingData
                 } else {
-                    let newCounterData = CounterData()
-                    newCounterData.location = selectedLocation
-                    newCounterData.count = itemsCounted
-                    realm.add(newCounterData)
+                    newData = CounterData()
+                    newData.location = selectedLocation
+                    newData.count = itemsCounted
+                    realm.add(newData)
                 }
+
+                // Prepare and send data to the server
+                let networkData = NetworkCounterData(
+                    Date: "\(Date())",
+                    Location: selectedLocation,
+                    Number_of_People: itemsCounted,
+                    Comments: "Updated via app"
+                )
+                postCountData(countData: networkData)  // Send data to the backend
+                itemsCounted = 0 // Reset counter after saving
             }
-            itemsCounted = 0 // Reset counter after saving
         } catch {
             print("Failed to save data in Realm: \(error.localizedDescription)")
         }
+    }
+
+    // Function to post data to the backend
+    func postCountData(countData: NetworkCounterData) {
+        guard let url = URL(string: "https://nimble-root-421621.ue.r.appspot.com/AddCount") else {
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(countData)
+            request.httpBody = jsonData
+        } catch {
+            print("Error encoding data: \(error.localizedDescription)")
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                print("Error with the response, unexpected status code: \((response as? HTTPURLResponse)?.statusCode ?? -1)")
+                return
+            }
+            
+            if let error = error {
+                print("Error sending data: \(error.localizedDescription)")
+                return
+            }
+            
+            print("Data posted successfully!")
+        }
+        
+        task.resume()
     }
 }
