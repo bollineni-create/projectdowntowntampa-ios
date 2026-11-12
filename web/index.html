@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PDT App · Archived project</title>
+<meta name="description" content="PDT App: an iOS app for the volunteers and board of Project Downtown Tampa. Archived project.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<style>
+  :root {
+    --night: #010206; --panel: #07131d; --navy: #01324f; --blue: #0199f5; --blue-2: #0492e3;
+    --ink: #f4f8fb; --mute: #9db2c2; --line: rgba(255, 255, 255, .1);
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--night); color: var(--ink);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
+  }
+  main { max-width: 980px; margin: 0 auto; padding: 28px 20px 56px; }
+  a { color: var(--blue); }
+  h1, h2, h3, p { margin: 0; }
+
+  .top { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+  .top img { width: 84px; height: 84px; border-radius: 20px; background: #fff; flex: none; }
+  .top h1 { font-size: clamp(30px, 7vw, 46px); line-height: 1.05; letter-spacing: -.02em; }
+  .tag { display: inline-block; font: 600 11.5px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase;
+    color: var(--night); background: var(--blue); padding: 6px 10px; border-radius: 999px; margin-bottom: 10px; }
+  .lede { margin-top: 20px; font-size: clamp(17px, 2.6vw, 20px); color: var(--ink); max-width: 62ch; }
+  .note { margin-top: 12px; color: var(--mute); font-size: 14.5px; max-width: 62ch; }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; margin-top: 28px;
+    background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .facts div { background: var(--panel); padding: 14px 16px; }
+  .facts dt { font: 600 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+  .facts dd { margin: 8px 0 0; font-weight: 600; }
+  dl { margin: 0; }
+
+  section { margin-top: 44px; }
+  h2 { font-size: 22px; letter-spacing: -.01em; margin-bottom: 16px; }
+
+  .split { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; align-items: start; }
+  @media (min-width: 820px) { .split { grid-template-columns: minmax(0, 1fr) 340px; } }
+
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .features li { list-style: none; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+  .features h3 { font-size: 16px; margin-bottom: 6px; }
+  .features p { color: var(--mute); font-size: 14.5px; }
+  ul { margin: 0; padding: 0; }
+
+  /* The counter: a browser copy of the app's Counter screen. */
+  .phone { background: linear-gradient(180deg, var(--navy), #021a2a); border: 1px solid var(--line); border-radius: 28px; padding: 18px; }
+  .phone h3 { font-size: 15px; text-align: center; color: var(--mute); font-weight: 600; margin-bottom: 12px; }
+  .phone label { display: block; font-size: 13px; color: var(--mute); margin-bottom: 6px; }
+  select, .btn { font: inherit; color: var(--ink); border-radius: 12px; border: 1px solid var(--line); }
+  select { width: 100%; padding: 11px 12px; background: rgba(0, 0, 0, .3); min-height: 44px; }
+  .tap { display: block; width: 100%; margin: 14px 0; padding: 26px 0 22px; border-radius: 20px; border: 1px dashed rgba(1, 153, 245, .55);
+    background: rgba(1, 153, 245, .1); color: var(--ink); cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+  .tap:active { background: rgba(1, 153, 245, .22); }
+  .tap b { display: block; font-size: 72px; line-height: 1; font-variant-numeric: tabular-nums; font-weight: 700; }
+  .tap span { display: block; margin-top: 8px; font-size: 13px; color: var(--mute); }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .btn { padding: 11px 8px; min-height: 44px; background: rgba(0, 0, 0, .3); cursor: pointer; font-weight: 600; touch-action: manipulation; }
+  .btn.go { background: var(--blue); color: var(--night); border-color: transparent; }
+  .btn:focus-visible, .tap:focus-visible, select:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+  .log { margin-top: 14px; font-size: 14px; }
+  .log li { list-style: none; display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
+  .log li span { color: var(--mute); }
+  .log .empty { color: var(--mute); justify-content: center; }
+  .fine { margin-top: 12px; font-size: 12.5px; color: var(--mute); text-align: center; }
+
+  .timeline li { list-style: none; display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .timeline li:last-child { border-bottom: 1px solid var(--line); }
+  .timeline b { font: 600 14px/1.55 var(--mono); color: var(--blue); }
+  .timeline p { color: var(--mute); font-size: 15px; }
+
+  footer { margin-top: 44px; color: var(--mute); font-size: 14px; }
+  @media (prefers-reduced-motion: no-preference) { .tap { transition: background .12s; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="top">
+      <img src="assets/icon.png" alt="Project Downtown Tampa logo" width="84" height="84">
+      <div>
+        <span class="tag">Archived project</span>
+        <h1>PDT App</h1>
+      </div>
+    </div>
+    <p class="lede">An iOS app for the volunteers and board members of Project Downtown Tampa. It put the route, the headcount and the resource list for each outing in one place.</p>
+    <p class="note">This page is a record of the project. The app is no longer in active development. The counter below is a browser copy of one screen; nothing you enter is saved or sent anywhere.</p>
+
+    <dl class="facts">
+      <div><dt>Status</dt><dd>Archived</dd></div>
+      <div><dt>Built</dt><dd>2023 to 2024</dd></div>
+      <div><dt>Platform</dt><dd>iOS, SwiftUI</dd></div>
+      <div><dt>Last version</dt><dd>2.0</dd></div>
+    </dl>
+  </header>
+
+  <section class="split" aria-labelledby="what">
+    <div>
+      <h2 id="what">What it did</h2>
+      <ul class="features">
+        <li><h3>Locations</h3><p>A map of the seven stops on the route. Tap a stop to highlight its pin, then get directions to it.</p></li>
+        <li><h3>Counter</h3><p>Tap the screen to count the people served at each stop, add a note, and submit. Entries could be edited afterwards and refreshed live.</p></li>
+        <li><h3>Requests</h3><p>A place to write down what someone asked for, so it could be brought on the next outing.</p></li>
+        <li><h3>Resources</h3><p>Local organizations, meal services and their details, ready to share on the spot.</p></li>
+        <li><h3>Donation</h3><p>A direct link to give to the organization.</p></li>
+        <li><h3>Board contacts</h3><p>The board and their roles, reachable from inside the app.</p></li>
+      </ul>
+    </div>
+
+    <div class="phone" aria-label="Counter demo">
+      <h3>Counter</h3>
+      <label for="loc">Select location</label>
+      <select id="loc">
+        <option>Borell Park</option><option>Bus Stop 1</option><option>Bus Stop 2</option><option>Bus Stop 3</option>
+        <option>Gaslight Park</option><option>Good Sam</option><option>Graveyard</option>
+      </select>
+      <button class="tap" id="tap" type="button" aria-label="Add one to the count">
+        <b id="count" aria-live="polite">0</b><span>Tap to count</span>
+      </button>
+      <div class="row">
+        <button class="btn" id="minus" type="button" aria-label="Subtract one">−1</button>
+        <button class="btn" id="reset" type="button">Reset</button>
+        <button class="btn go" id="submit" type="button">Submit</button>
+      </div>
+      <ul class="log" id="log" aria-label="Submitted counts"><li class="empty">No counts submitted yet</li></ul>
+      <p class="fine">Demo only. Counts stay on this page and clear when you leave.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="how">
+    <h2 id="how">How it was built</h2>
+    <dl class="facts">
+      <div><dt>Interface</dt><dd>SwiftUI, MapKit</dd></div>
+      <div><dt>On the phone</dt><dd>Realm database</dd></div>
+      <div><dt>Cloud</dt><dd>Appwrite</dd></div>
+      <div><dt>Sign-in</dt><dd>Sign in with Apple</dd></div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="history">
+    <h2 id="history">Version history</h2>
+    <ul class="timeline">
+      <li><b>2.0</b><p>Counter data stored in the cloud, sent from every part of data collection.</p></li>
+      <li><b>1.3.8</b><p>Count by tapping the screen. Date and time recorded with each count. Sign in with Apple on the welcome screen.</p></li>
+      <li><b>1.3.7</b><p>Appwrite added as the backend. New welcome screen leading into the sidebar menu.</p></li>
+      <li><b>1.3.6</b><p>Resources page for websites and locations.</p></li>
+      <li><b>1.3.4</b><p>Editable fields in the list of counts, and a new record type for requests.</p></li>
+      <li><b>1.3.3</b><p>Board contact page.</p></li>
+      <li><b>1.3</b><p>Notes for each location, and data grouped by location.</p></li>
+      <li><b>1.2.2</b><p>Map view with directions, donation link, and a settings page with dark mode.</p></li>
+      <li><b>1.2</b><p>Counts saved on the phone and shown in their own view.</p></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Built by Naren Bollineni. Source code: <a href="https://github.com/bollineni-create/projectdowntowntampa-ios" target="_blank" rel="noopener">projectdowntowntampa-ios on GitHub</a>.</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var count = 0, entries = [];
+  var $ = function (id) { return document.getElementById(id); };
+  function show() { $('count').textContent = count; }
+  function render() {
+    var log = $('log'); log.textContent = '';
+    if (!entries.length) { var e = document.createElement('li'); e.className = 'empty'; e.textContent = 'No counts submitted yet'; log.appendChild(e); return; }
+    entries.forEach(function (x) {
+      var li = document.createElement('li'), a = document.createElement('b'), b = document.createElement('span');
+      a.textContent = x.loc + ': ' + x.n; b.textContent = x.at; li.appendChild(a); li.appendChild(b); log.appendChild(li);
+    });
+  }
+  $('tap').addEventListener('click', function () { count += 1; show(); });
+  // The app's counter allowed negative numbers, so this one does too.
+  $('minus').addEventListener('click', function () { count -= 1; show(); });
+  $('reset').addEventListener('click', function () { count = 0; show(); });
+  // Changing location zeroes the count, as in the app.
+  $('loc').addEventListener('change', function () { count = 0; show(); });
+  $('submit').addEventListener('click', function () {
+    var at = new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    entries.unshift({ loc: $('loc').value, n: count, at: at });
+    if (entries.length > 6) entries.pop();
+    count = 0; show(); render();
+  });
+})();
+</script>
+</body>
+</html>
