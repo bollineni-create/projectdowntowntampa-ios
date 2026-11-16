@@ -9,6 +9,7 @@
 <link rel="icon" href="assets/icon.png" type="image/png">
 <style>
   :root {
+    color-scheme: dark;
     --night: #010206; --panel: #07131d; --navy: #01324f; --blue: #0199f5; --blue-2: #0492e3;
     --ink: #f4f8fb; --mute: #9db2c2; --line: rgba(255, 255, 255, .1);
     --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -56,7 +57,11 @@
   .phone h3 { font-size: 15px; text-align: center; color: var(--mute); font-weight: 600; margin-bottom: 12px; }
   .phone label { display: block; font-size: 13px; color: var(--mute); margin-bottom: 6px; }
   select, .btn { font: inherit; color: var(--ink); border-radius: 12px; border: 1px solid var(--line); }
-  select { width: 100%; padding: 11px 12px; background: rgba(0, 0, 0, .3); min-height: 44px; }
+  /* The picker is drawn by the page, not the browser: left to itself, Safari paints it white and the
+     light text on it can't be read. The list it opens follows the dark colour scheme set on the page. */
+  select { width: 100%; padding: 11px 38px 11px 12px; min-height: 44px; -webkit-appearance: none; appearance: none;
+    background: #04101a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%239db2c2' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center; }
+  select option { background: #04101a; color: var(--ink); }
   .tap { display: block; width: 100%; margin: 14px 0; padding: 26px 0 22px; border-radius: 20px; border: 1px dashed rgba(1, 153, 245, .55);
     background: rgba(1, 153, 245, .1); color: var(--ink); cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
   .tap:active { background: rgba(1, 153, 245, .22); }
